@@ -8,14 +8,14 @@ int main(){
             if(j==0 || j==n-1) printf("+");
             else printf("-");
             }
-            printf("\n\n");
+            printf("\n");
         }
         else{
             for(int j=0; j<n; j++){
                 if(j==0 || j==n-1) printf("|");
                 else printf(" ");
             }
-            printf("\n\n");
+            printf("\n");
         }
     }
     return 0;
