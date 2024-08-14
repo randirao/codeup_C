@@ -13,6 +13,7 @@ int main(){
                             if(s3[k]==s1[0]){
                                 printf("good");
                                 return 0;
+                                }
                             }
                         }
                     }
@@ -21,7 +22,6 @@ int main(){
         }
     }
 }
-    }
     printf("bad");
     return 0;
 }
