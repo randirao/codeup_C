@@ -1,6 +1,6 @@
 #include<stdio.h>
 int f(int a, int b){
-    if(a==b){
+    if(a>b){
         return 0;
     }
     f(a,b-1);
