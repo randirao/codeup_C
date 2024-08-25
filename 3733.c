@@ -1,22 +1,26 @@
-#define MAX(a, b) (((a) > (b)) ? (a) : (b))
-#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#include <stdio.h>
 
-#include<stdio.h>
+long long int memo[10000001];
 
-int memo[10000001];
-int f(int n){
-    if(n==1) return 1;
-    if(n%2) return memo[n] = f(3*n+1);
-    else return memo[n] = f(n/2);
+long long int f(long long int n){
+    if (n == 1) return 1; 
+    if(n > 10000000){
+        if(n%2) return f(3*n+1)+1;
+        else return f(n/2)+1;
+    }
+    else{
+        if(memo[n]) return memo[n];
+        else if(n%2) return memo[n] = f(3*n+1)+1;
+        else return memo[n] = f(n/2)+1;
+    }
 }
 
-int main(){
-    int a, b, max = 0, min = 10000001;
+int main(void){
+    int a, b, max = 0;
     scanf("%d %d", &a, &b);
     for(int i=a; i<=b; i++){
-        max = MAX(max, f(i));
-        min = MIN(min, f(i));
+        if(f(i) > memo[max]) max = i;
     }
-    printf("%d %d", min, max);
+    printf("%d %lld", max, memo[max]);
     return 0;
 }
