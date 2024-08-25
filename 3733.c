@@ -12,7 +12,7 @@ long long int f(long long int n){
         if(memo[n]) return memo[n];
         else if(n%2) return memo[n] = f(3*n+1)+1;
         else return memo[n] = f(n/2)+1;
-    }
+    }   
 }
 
 int main(void){
