@@ -1,9 +1,5 @@
 #include<stdio.h>
 
-//int f(int n, int r){
-//
-//}
-
 int main(){
     int n, r; //5 2
     scanf("%d %d", &n, &r);
@@ -17,7 +13,5 @@ int main(){
     for(int i=0; i<r_1; i++) s_1 *= (r_1-i); //(n-r)!
     printf("%d", m/(s*s_1));
 
-
-//    printf("%d", f(n, r));
     return 0;
 }
