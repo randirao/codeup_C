@@ -1,11 +1,11 @@
 #include<stdio.h>
 
-int arr[51][51];
+int memo[51][51];
 
 int f(int r, int c){
-    if(r==1 || c==1) return 1;
-    if(arr[r][c]) return arr[r][c];
-    return arr[r][c] = (f(r-1, c) + f(r, c-1))%100000000;
+    if(r==1 || c==1) return memo[r][c] = 1;
+    if(memo[r][c]) return memo[r][c];
+    return memo[r][c] = (f(r-1, c) + f(r, c-1))%100000000;
 }
 int main(){
     int r, c;
